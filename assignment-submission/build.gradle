@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        maven { url "http://platform-acceleration-lab-maven.s3.amazonaws.com" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath "io.pivotal.pal.assignments:assignments-plugin:4.1.0"
+    }
+}
+
+apply plugin: "io.pivotal.pal.assignments.plugin"
+
+assignments {
+    apiUrl = "https://assignments.education.pivotal.io/"
+    emails = [
+            "dhiraj.jaiswal@emc.com",
+	"pushkal.khojeey1@emc.com"
+
+    ]
+    cohortIdentifier = "349802836"
+}
+
+defaultTasks "tasks"
